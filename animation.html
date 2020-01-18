@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>my page</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    
+    </style>
+    
+    </head>
+    
+    
+    <body>
+    
+      <canvas id="canvas"></canvas>
+        <script>
+        var pos={x:5,y:30};
+         var Canvas=document.getElementById("canvas");
+            var ctx=Canvas.getContext('2d');
+            Canvas.width=300;
+            Canvas.height=300;
+            window.setInterval(init,200);
+            
+            function init(){
+                if(pos.x>Canvas.width) pos.x=0;
+                if(pos.y>Canvas.height) pos.y=30;
+                ctx.clearRect(0,0,Canvas.width,Canvas.height);
+                ctx.beginPath();
+              ctx.arc(pos.x,pos.y,30,0,2*Math.PI);
+              ctx.fillStyle="red";
+              ctx.fill();   
+                pos.x+=5;
+                
+            }
+        
+        </script>
+        
+        
+        
+    
+    
+    </body>
+</html>
